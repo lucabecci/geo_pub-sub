@@ -1,0 +1,16 @@
+{
+    "natzu": {
+        "PORT": 4040,
+        "NAMESPACE": "NATZU",
+        "NODE_ENV": "dev",
+        "TYPE": "SERVICE_API",
+        "TENANT": "AR"
+    },
+    "kirito": {
+        "PORT": 4020,
+        "NAMESPACE": "KIRITO",
+        "NODE_ENV": "dev",
+        "TYPE": "SERVICE_GEO",
+        "TENANT": "AR"
+    }
+}
