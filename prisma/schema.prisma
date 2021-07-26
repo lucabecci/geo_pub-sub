@@ -1,0 +1,21 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+datasource db {
+    provider = "mongodb"
+    url = env("DATABASE_URL")
+}
+
+model Geo {
+  id String @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  systemID String @unique
+  lat String
+  lon String
+  city String
+  country String
+  state String
+  date DateTime 
+}
+
