@@ -5,6 +5,7 @@ const RedisService = function RedisService(){
         url: process.env.REDIS_URL,
         password: process.env.REDIS_PASS
     })
+    console.log("Redis-Pub/Sub connected")
 }
 
 RedisService.prototype.lpush = function lpush(channel, message){
