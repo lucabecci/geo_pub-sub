@@ -1,9 +1,11 @@
 const express = require("express")
 const morgan = require("morgan")
+const LoggerService = require("../../common/services/LoggerService")
 
 const NatzuContainer = function NatzuContainer(){
     this.server = null
     this.config = require('../../configs/configurations.json').natzu
+    // this.logger = new LoggerService(this.config.NAMESPACE)
 }
 
 NatzuContainer.prototype.start = function init(){
