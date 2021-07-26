@@ -12,11 +12,15 @@ RedisService.prototype.lpush = function lpush(channel, message){
     this.client.publish(channel, JSON.stringify(message))
 }
 
-RedisService.prototype.lget = function lget(channel){
-    this.client.subscribe(channel)
+RedisService.prototype.lget = function lget(){
     this.client.on("message", (ch, msg) => {
         console.log(msg)
     })
 }
+
+RedisService.prototype.lsuscribe = function lsuscribe(channel){
+    this.client.subscribe(channel)
+}
+
 
 module.exports = RedisService

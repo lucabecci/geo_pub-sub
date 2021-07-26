@@ -1,7 +1,6 @@
 const express = require("express")
 const morgan = require("morgan")
 const LoggerService = require("../../common/services/LoggerService")
-
 const NatzuContainer = function NatzuContainer(){
     this.server = null
     this.config = require('../../configs/configurations.json').natzu
@@ -10,7 +9,8 @@ const NatzuContainer = function NatzuContainer(){
 
 NatzuContainer.prototype.start = function init(){
     const app = express()
-    server_conf(app)
+    global.redis.lget()
+    global.redis.lsuscribe("test")
     this.server = app.listen(this.config.PORT, () => {
         console.log(`${this.config.NAMESPACE} on port:`, this.config.PORT)
     })
@@ -22,8 +22,5 @@ NatzuContainer.prototype.close = function close(){
     })
 }
 
-function server_conf(app){
-    app.use(express.urlencoded({extended: false, limit: "50mb"}))
-    app.use(express.json())
-    app.use(morgan("dev"))
-}
+
+module.exports = NatzuContainer

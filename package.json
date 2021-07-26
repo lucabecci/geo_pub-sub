@@ -13,6 +13,7 @@
     "nodemon": "^2.0.12"
   },
   "scripts": {
-    "start_kirito:dev": "nodemon containers/kirito/entrypoint"
+    "start_kirito:dev": "nodemon containers/kirito/entrypoint",
+    "start_natzu:dev": "nodemon containers/natzu/entrypoint"
   }
 }
