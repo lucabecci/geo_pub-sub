@@ -18,11 +18,4 @@ GeoController.prototype.getAll = async function getAll(req, res){
     return res.status(200).json(geolocations)
 }
 
-GeoController.prototype.fakeSend = async function fakeSend(req, res){
-    const id = uuid.v4()
-    global.redis.lpush("test", id)
-    return res.status(200).json({ message: "success send" })
-}
-
-
 module.exports = GeoController

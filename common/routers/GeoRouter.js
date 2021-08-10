@@ -8,7 +8,6 @@ const GeoRouter = function GeoRouter(){
 
 GeoRouter.prototype.config = function config(){
     this.router.get("/all", this.geoController.getAll)
-    this.router.get("/fake", this.geoController.fakeSend)
 }
 
 const router = new GeoRouter()

@@ -5,4 +5,8 @@ GeoService.prototype.getAll = async function getAll(){
     return geolocations
 }
 
+GeoService.prototype.getById = async function getById(id){
+    const geolocation = global.db.geo.findOne()
+}
+
 module.exports = GeoService
