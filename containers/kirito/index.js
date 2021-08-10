@@ -28,6 +28,7 @@ function server_conf(app){
     app.use(express.urlencoded({extended: false, limit: "50mb"}))
     app.use(express.json())
     app.use(morgan("dev"))
+    app.use("/v1", require("../../common/routers/IndexRouter"))
     app.use("/v1/geo", require("../../common/routers/GeoRouter"))
     app.get("/v1/ping", function(req, res){
         return res.status(200).json({

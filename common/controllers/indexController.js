@@ -1,3 +1,4 @@
+const uuid = require("uuid")
 const IndexController = function IndexController(){}
 
 IndexController.prototype.index = function index(req, res){
